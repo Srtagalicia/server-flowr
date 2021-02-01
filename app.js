@@ -6,6 +6,7 @@ const cors = require("cors");
 require("./config/db.config");
 
 const usersRouter = require('./routes/users');
+const registerRouter = require('./routes/registers');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/users', usersRouter);
+app.use('/registers', registerRouter);
 
 app.use((req, res, next) => {
     res.status(404);
