@@ -23,9 +23,10 @@ let RegisterSchema = new mongoose.Schema({
     },
     intensityOfEmotion: {
         type: Number, 
-        enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
-        owner: {type: Schema.Types.ObjectId, ref: 'user'
-    }    
+        enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    
+    owner: {type: Schema.Types.ObjectId, ref: 'user'}    
 })
 
 let registerModel = mongoose.model('register', RegisterSchema)
